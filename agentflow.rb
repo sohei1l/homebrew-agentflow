@@ -2,13 +2,14 @@ class Agentflow < Formula
   desc "AI agent orchestration and management CLI tool for goal-driven autonomous task execution"
   homepage "https://github.com/sohei1l/agentflow"
   url "https://github.com/sohei1l/agentflow/archive/v1.0.0.tar.gz"
-  sha256 "4b58aea0d9720d0ce5588b7910647ffa7bfa7c920a22e983ca43760761c07b90"
+  sha256 "d3ad68369060fc49e3e1e5f1a9851d5040eed75de1bca09baaf4014b8378f0c8"
   license "MIT"
 
   depends_on "node"
 
   def install
-    system "npm", "install", "--production"
+    # Install all dependencies including dev dependencies (needed for TypeScript)
+    system "npm", "install"
     system "npm", "run", "build"
     
     # Install the built CLI
